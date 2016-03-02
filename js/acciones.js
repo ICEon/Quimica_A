@@ -318,7 +318,9 @@ $("#btn_sonido").on('click',function(){
 	});//click btn_vibrar
 
   
-
+$('.elementoT').on('click', function(){
+	alert($(this).attr('id'));
+});
 
 
 
