@@ -1,5 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
+
+.simboloE {
+	font-size: 150%;
+	font-weight: bold;
+	color: #FFC600;
+	border: #FFC600 1px solid;
+	border-radius:25px;
+}
 .adivinar
  {
 	 width: 100%;
