@@ -251,6 +251,75 @@ $(document).on("popupafterclose", "#error", function () {
  }
 
 
+$("#btn_sonido").on('click',function(){
+		if($("#btn_sonido").hasClass('ui-icon-audio'))
+			{
+			 db.transaction(function(tx) {
+
+              tx.executeSql("UPDATE configuracion SET sonido = (?) WHERE id = 1", [0], function(tx, res) {
+				  sonido=0;
+			  			$("#btn_sonido").removeClass('ui-icon-audio');
+			$("#btn_sonido").addClass('ui-icon-delete');
+			alert('El sonido se apagó');
+			    }, function(e) {
+            alert ("ERROR: " + e.message);			  
+			  }); 	   
+             });
+
+
+			}
+		else
+			{
+			 db.transaction(function(tx) {
+              tx.executeSql("UPDATE configuracion SET sonido = (?) WHERE id = 1", [1], function(tx, res) {
+				  sonido=1;
+			$("#btn_sonido").removeClass('ui-icon-delete');
+			$("#btn_sonido").addClass('ui-icon-audio');
+			alert('El sonido se aprendió');
+								audio.play('acierto');
+			  
+			    }, function(e) {
+            alert ("ERROR: " + e.message);			  
+			  }); 	   
+             });
+
+			}
+	});//click btn_sonido
+	
+	$("#btn_vibrar").on('click',function(){
+		if($("#btn_vibrar").hasClass('ui-icon-power'))
+			{db.transaction(function(tx) {
+              tx.executeSql("UPDATE configuracion SET vibrar = (?) WHERE id = 1", [0], function(tx, res) {
+				  vibrar = 0;
+			  			$("#btn_vibrar").removeClass('ui-icon-power');
+			$("#btn_vibrar").addClass('ui-icon-delete');
+			alert('Se apagó la vibracion');
+			    }, function(e) {
+            alert ("ERROR: " + e.message);			  
+			  }); 	   
+             });
+
+			}
+		else
+			{
+			db.transaction(function(tx) {
+              tx.executeSql("UPDATE configuracion SET vibrar = (?) WHERE id = 1", [1], function(tx, res) {
+				  vibrar = 1;
+			  			$("#btn_vibrar").removeClass('ui-icon-delete');
+			$("#btn_vibrar").addClass('ui-icon-power');
+			alert('Se aprendió la vibracion');
+			navigator.notification.vibrate(500);
+
+			    }, function(e) {
+            alert ("ERROR: " + e.message);			  
+			  }); 	   
+             });
+			}
+	});//click btn_vibrar
+
+  
+
+
 
 
 });
