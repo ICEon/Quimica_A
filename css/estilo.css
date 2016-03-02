@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+.adivinar
+ {
+	 width: 100%;
+	 top: 0;
+     left: 0;
+	 border-bottom-left-radius: 15px;
+	 border-bottom-right-radius: 15px;
+
+ }
+.boton
+{
+    display: inline-block;
+	font-size: 4rem;
+	margin: 0.1rem;
+	color: #FFF;	
+	border: 0.7rem solid #FFF;
+	text-align: center;
+	width: 22%;
+}
+
+#comandos
+ {
+		  width: 100%;
+		  background-color: #30F;
+ }
+
+#comandos div:first-child
+ {
+	 background-color:#D92440;
+ }
+ 
+#comandos div:nth-child(2)
+ {
+	  background-color:#6DD921;
+ }
+ 
+#comandos div:nth-child(3)
+ {
+	  background-color: #F87E26;
+ }
+
+.carril
+ {	 
+
+    display: inline-block;
+	overflow: hidden;	
+	margin: 0.1rem;
+	color: #FFF;	
+    border-right: 0.7rem solid #FFF; 
+	border-left: 0.7rem solid #FFF;
+	text-align: center;
+	width: 22%;
+ }
+ 
+$('#tablero')
+ {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+ }
+
+ #tablero span {
+	position:relative;
+	font-size:3em;
+	color:#6DD921;
+	/*border:1px #0F0 solid;*/
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+
+ }
+ 
+  .grande
+ {display:block;
+  color:#E67E22;
+ }
