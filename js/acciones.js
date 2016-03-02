@@ -328,7 +328,7 @@ $("#btn_sonido").on('click',function(){
 $('.elementoT').on('click', function(){
 	
 		mostrarCual = $(this).attr('id').substring(9);
-	alert(mostrarCual);
+
 
 			//alert (elementoEncontrar); 
 			
