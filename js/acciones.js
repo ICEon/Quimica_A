@@ -122,25 +122,25 @@ audio.preloadFX('acierto', 'recursos/sonidos/acierto.mp3', function(msg){}, func
   
 
    db.transaction(function(tx) {
-        tx.executeSql("select simboloElemento from elementos where numeroAtomico = " + elementoEncontrar + ";", [], function(tx, res) {
+        tx.executeSql("select simbolo from elementos where numeroAtomico = " + elementoEncontrar + ";", [], function(tx, res) {
 			
-			$("#" + azar.opcion[donde].uno).html(res.rows.item(0).simboloElemento);
-			simboloCorrecto = res.rows.item(0).simboloElemento;
+			$("#" + azar.opcion[donde].uno).html(res.rows.item(0).simbolo);
+			simboloCorrecto = res.rows.item(0).simbolo;
 
 			
         });
       });
       db.transaction(function(tx) {
-        tx.executeSql("select simboloElemento from elementos where numeroAtomico = " + otroElemento1 + ";", [], function(tx, res) {
-			$("#" + azar.opcion[donde].dos).html(res.rows.item(0).simboloElemento);
+        tx.executeSql("select simbolo from elementos where numeroAtomico = " + otroElemento1 + ";", [], function(tx, res) {
+			$("#" + azar.opcion[donde].dos).html(res.rows.item(0).simbolo);
 			
         });
       });
 
 
    db.transaction(function(tx) {
-        tx.executeSql("select simboloElemento from elementos where numeroAtomico = " + otroElemento2 + ";", [], function(tx, res) {
-			$("#" + azar.opcion[donde].tres).html(res.rows.item(0).simboloElemento);
+        tx.executeSql("select simbolo from elementos where numeroAtomico = " + otroElemento2 + ";", [], function(tx, res) {
+			$("#" + azar.opcion[donde].tres).html(res.rows.item(0).simbolo);
 			
         });
        });
