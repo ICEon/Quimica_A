@@ -160,7 +160,53 @@
     <a href="#principal" class="ui-btn-left" data-icon="home">Inicio</a>
   </div>
 
+
+
   <div data-role="main" class="ui-content">
+  <div data-role="popup" id="elementoMostrar" data-overlay-theme="a" data-theme="b" data-dismissible="false">
+      <div data-role="header" data-theme="a">
+        <h1 style=" margin:1px 20px 1px;"><span id="nombreMostrar"></span></h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+       <div align="center">
+         <div>
+          <div class="simboloE">
+           <span id="simboloMostrar"></span>
+          </div>
+          <div>
+           Numero atomico: <span id="nomberoAtomicoMostrar"></span>
+          </div>
+          <div>
+           Masa Atomica: <span id="masaMostrar"></span>
+          </div>
+         <div>
+           Grupo: <span id="grupoMostrar"></span>
+          </div>
+          <div>
+           Periodo: <span id="periodoMostrar"></span>
+          </div>
+          <div>
+           Electronegatividad: <span id="electroMostrar"></span>
+          </div>
+          <div>
+           Configuracion electronica: <span id="configMostrar"></span>
+          </div>
+          <div>
+           Estado: <span id="estadoMostrar"></span>
+          </div>
+          <div>
+           Familia: <span id="familiaMostrar"></span>
+          </div>
+          <div>
+           Descripción: <span id="descripcionMostrar"></span>
+          </div>
+         </div>
+
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" id="btn_cerrar_mostrar">Continuar</a>
+       </div>
+      </div>
+    </div> 
     <div align="center">
 			<ul data-role="listview" data-inset="true" id="listado">
 <li class="elementoT" id="elemento-1"><a >Hidrogeno</a></li>

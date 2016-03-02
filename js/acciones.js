@@ -3,7 +3,7 @@
 $(document).ready(function(e) {
 var pulsado ="";
 var primera = 0;
-
+var mostrarCual = 0;
 var simboloCorrecto="";
 var bandera=0;
 var	ancho = $('#principal').width();	 
@@ -317,9 +317,40 @@ $("#btn_sonido").on('click',function(){
 			}
 	});//click btn_vibrar
 
+  $('#btn_cerrar_mostrar').on('tap', function(){
+   $("#elementoMostrar").popup('close', {transition: "flip"});	
+   
+	
+});
+
+  
   
 $('.elementoT').on('click', function(){
-	alert($(this).attr('id'));
+	
+		mostrarCual = $(this).attr('id').substring(9);
+	alert(mostrarCual);
+
+			//alert (elementoEncontrar); 
+			
+   db.transaction(function(tx) {
+        tx.executeSql("select * from elementos where numeroAtomico = " + mostrarCual + ";", [], function(tx, res) {
+			$("#numeroAtomicoMostrar").html(res.rows.item(0).numeroAtomico);
+			$("#nombreMostrar").html(res.rows.item(0).nombreElemento);			
+			$("#simboloMostrar").html(res.rows.item(0).simbolo);			
+			$("#masaMostrar").html(res.rows.item(0).masaAtomica);			
+			$("#grupoMostrar").html(res.rows.item(0).grupo);			
+			$("#periodoMostrar").html(res.rows.item(0).periodo);			
+			$("#electroMostrar").html(res.rows.item(0).electronegatividad);			
+			$("#configMostrar").html(res.rows.item(0).configuracionElectronica);			
+			$("#estadoMostrar").html(res.rows.item(0).estado);			
+			$("#familiaMostrar").html(res.rows.item(0).familia);
+			$("#descripcionMostrar").html(res.rows.item(0).descripcion);			
+          $("#elementoMostrar").popup('open', {transition: "slide"});
+			
+        });
+      });
+	
+	
 });
 
 
